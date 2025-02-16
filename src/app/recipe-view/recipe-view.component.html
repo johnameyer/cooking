@@ -1,0 +1,44 @@
+<h1>{{ recipe().name }}</h1>
+
+@let aliases = recipe().aliases;
+@if(aliases && aliases.length) {
+    a.k.a.
+    @for(alias of aliases; track $index) {
+        {{ alias }}
+    }
+}
+
+@let notes = recipe().notes;
+@if(notes) {
+    {{ notes }}
+}
+
+@let key = recipe().key;
+@if(key && key.length) {
+    <h2>Key Ingredients</h2>
+    <ul>
+        @for (item of key; track $index) {
+            <li>{{ ingredientToString(item) }}</li>
+        }
+    </ul>
+}
+
+@let optional = recipe().optional;
+@if(optional && optional.length) {
+    <h2>Optional Ingredients</h2>
+    <ul>
+        @for (item of optional; track $index) {
+            <li>{{ ingredientToString(item) }}</li>
+        }
+    </ul>
+}
+
+@let variants = recipe().variants;
+@if (variants && variants.length) {
+    <h2>Other variants:</h2>
+    <ul>
+        @for (item of variants; track $index) {
+            <li>{{ item.name }}</li>
+        }
+    </ul>
+}
