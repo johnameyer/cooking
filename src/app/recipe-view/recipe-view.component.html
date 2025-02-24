@@ -38,7 +38,7 @@
     <h2>Other variants:</h2>
     <ul>
         @for (item of variants; track $index) {
-            <li>{{ item.name }}</li>
+            <li><a [routerLink]="['.',toURI([item])]">{{ item.name }}</a></li>
         }
     </ul>
 }

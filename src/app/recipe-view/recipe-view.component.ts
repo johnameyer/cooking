@@ -1,9 +1,11 @@
 import { Component, input } from '@angular/core';
 import { Ingredient, Recipe } from '../data/recipe';
+import { RouterLink } from '@angular/router';
+import { toURI } from '../data/all';
 
 @Component({
   selector: 'app-recipe-view',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './recipe-view.component.html',
 })
 export class RecipeViewComponent {
@@ -18,4 +20,6 @@ export class RecipeViewComponent {
       return `${ingredient.modifier} ${ingredient.name}`
     }
   };
+
+  toURI = toURI;
 }

@@ -36,6 +36,7 @@ jobs:
           git config --local user.name "GitHub Action"
           find * -maxdepth 0 ! -name 'dist' -exec rm -r {} \;
           mv dist/cooking/browser/* ./
+          mv index.html 404.html
           rm -rf dist/
           touch .nojekyll
           git add -A

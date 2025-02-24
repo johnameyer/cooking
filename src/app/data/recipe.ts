@@ -19,7 +19,7 @@ export type Ingredient = string | {
     modifier: string,
 }
 
-export const resolve = (parent: Recipe, variation: Recipe) => ({
+export const resolve = (parent: Recipe, variation: Recipe): Recipe => ({
     ...variation,
     name: `${parent.name} > ${variation.name}`,
     key: [...(parent.key ?? []), ...(variation.key ?? [])],

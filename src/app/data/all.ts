@@ -7,9 +7,9 @@ export const all: Recipe[] = [
     { name: 'Pizza', variants: pizzas }
 ];
 
-const slug = (name: string) => name.toLowerCase().replace(' ', '-');
+const slug = (name: string) => name.toLowerCase().replaceAll(' ', '-');
 
-export const toURI = (heirarchy: Recipe[]) => heirarchy.map(recipe => encodeURI(slug(recipe.name))).join('/');
+export const toURI = (heirarchy: Recipe[]) => heirarchy.map(recipe => encodeURIComponent(slug(recipe.name))).join('/');
 
 export const fromURI = (uri: string[]) => {
     let array = all;
