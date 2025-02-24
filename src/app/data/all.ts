@@ -1,14 +1,37 @@
+import { antojitos } from "./antojitos";
+import { bowls } from "./bowls";
+import { breakfast } from "./breakfast";
+import { casseroles } from "./casserole";
 import { eggs } from "./egg";
+import { misc } from "./miscellany";
+import { noodles } from "./noodles";
 import { pizzas } from "./pizza";
 import { Recipe } from "./recipe";
+import { rice } from "./rice";
 import { sandwiches } from "./sandwich";
+import { soups } from "./soups";
+import { stews } from "./stews";
+import { stirfry } from "./stirfry";
 import { wraps } from "./wraps";
 
 export const all: Recipe[] = [
-    { name: 'Sandwich', variants: sandwiches },
+    { name: 'Antojitos', variants: antojitos },
+    // { name: 'Appetizers', variants: }
+    { name: 'Bowls', variants: bowls },
+    // { name: 'Braise', variants: },
+    { name: 'Breakfast', variants: breakfast },
+    { name: 'Casserole', variants: casseroles },
+    { name: 'Egg', variants: eggs },
+    { name: 'Miscellany', variants: misc },
+    { name: 'Noodles', variants: noodles },
     { name: 'Pizza', variants: pizzas },
-    { name: 'Wrap', variants: wraps },
-    { name: 'Eggs', variants: eggs }
+    { name: 'Rice', variants: rice },
+    { name: 'Sandwich', variants: sandwiches },
+    // Sides
+    { name: 'Soups', variants: soups },
+    { name: 'Stews', variants: stews },
+    { name: 'Stirfry', variants: stirfry },
+    { name: 'Wraps', variants: wraps },
 ];
 
 const slug = (name: string) => name.toLowerCase().replaceAll(' ', '-');

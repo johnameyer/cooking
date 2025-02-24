@@ -1,9 +1,16 @@
 import { Recipe } from "./recipe";
 
 export const wraps: Recipe[] = [
-    // dosa / kati roll / paratha
-    // crepe
+    {
+        name: 'Dosa'
+    },
+    {
+        name: 'Kati Roll'
+    },
+    {
+        name: 'Crepe',
 
+    },
     {
         name: 'Pita wrap',
         // pita - https://staging.eatgarbanzo.com/menu/

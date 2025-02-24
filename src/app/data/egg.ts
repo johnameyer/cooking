@@ -2,11 +2,13 @@ import { Recipe } from "./recipe";
 
 export const eggs: Recipe[] = [
     {
-        name: 'omelette',
+        name: 'Omelette',
+        optional: ['cheese', 'mushrooms', 'onions', 'peppers', 'tomatoes', 'spinach', 'asparagus', 'scallions', 'chiles', 'sausage', 'bacon', 'ham'],
         variants: [
             {
                 name: 'Denver'
             },
+            // 'Irish'
             {
                 name: 'Omurice'
             },
@@ -16,7 +18,16 @@ export const eggs: Recipe[] = [
         ]
     },
     {
-        name: 'Quiche' // strata / fritata
+        name: 'Fritata',
+        variants: [{
+            name: 'Strata'
+        }, {
+            name: 'Quiche',
+            variants: [{
+                name: 'Quiche Lorraine',
+                key: ['bacon']
+            }]
+        }]
     },
     {
         name: 'Oyakudon'
@@ -34,12 +45,14 @@ export const eggs: Recipe[] = [
         name: 'Huevos Rancheros'
     },
     {
-        name: 'Shakshuka'
-        // huevos a la flamenca / huevos ahogados
+        name: 'Shakshuka',
+        variants: [{
+            name: 'Huevos a La Flamenca'
+        }, {
+            name: 'Huevos Ahogados'
+        }]
     }
     // Tamago Kake Gohan
 
     // tortilla de patata
-    // deviled eggs
-    // silog
 ];
