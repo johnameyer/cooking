@@ -8,6 +8,7 @@
 // https://eathomegrown.com/menu
 // https://www.quiznos.com/menu/
 // https://www.subway.com/en-ca/menunutrition/menu
+// Earl's Arlington
 
 import { Recipe } from "./recipe"
 
@@ -28,6 +29,7 @@ export const sandwiches: Recipe[] = [
             // crunchy bread birote
         }]
     },
+    // milanesa
     {
         name: 'Banh Mi',
         key: ['baguette', 'cucumber', 'cilantro', 'pickled carrot', 'pickled daikon', 'meat'],
@@ -38,7 +40,7 @@ export const sandwiches: Recipe[] = [
         key: ['salami', 'capricola', 'peperroni', 'mortadella', 'provolone'],
         optional: ['onion', 'tomato', 'hot peppers', 'olive oil', 'red wine vinegar', 'oregano']
     },
-    // Ham and cheese derivatives?
+    // Ham derivatives?
     {
         name: 'Croque Monsier',
         key: ['ham', 'dijon mustard', 'gruyere'], // emmental cheese, comte or swiss
@@ -74,7 +76,7 @@ export const sandwiches: Recipe[] = [
         key: ['chicken', 'bacon', 'tomato', 'mayo'],
         optional: ['turkey']
     },
-    // Chicken Salad
+    // Chicken Salad (curried)
     {
         name: 'Thanksgiving',
         aliases: ['Pilgrim'],
@@ -89,12 +91,6 @@ export const sandwiches: Recipe[] = [
             name: 'Cheese and Tomato',
             key: ['tomato']
         }]
-    },
-    {
-        name: 'Cheesesteak',
-        key: [{name: 'steak', modifier: 'thinly sliced'}, {name: 'cheese', modifier: 'melted'}], // provolone, american, cheese wiz
-        optional: [{name: 'onion', modifier: 'grilled'}, {name: 'green bell pepper', modifier: 'grilled'}, {name: 'mushroom', modifier: 'grilled'}, 'garlic aioli'],
-        // variation: chopped cheese
     },
     {
         name: 'Chivito',
@@ -112,22 +108,41 @@ export const sandwiches: Recipe[] = [
         key: ['bun', 'burger'],
         optional: ['cheese', 'lettuce', 'tomato', 'onion', 'bacon', 'relish', 'mayo', 'avocado', 'onion straws', 'sauce'],
         variants: [
-            // black and bleu
-            // mushroom swiss
+            // beer cheese?
+            {
+                name: 'Black and Blue',
+                key: ['blue cheese', 'blackened seasoning'],
+                optional: ['red onion', 'bacon', 'mayo', 'steak sauce']
+            },
+            {
+                name: 'Mushroom Swiss',
+                key: ['mushroom', 'swiss cheese'],
+                optional: ['garlic aioli']
+            },
             // BBQ (bacon)
             // breakfast
             // jalapeno / hatch chili
             // chili
-            // southwest
+            // southwest - guac (chilis)
             {
                 name: 'Patty Melt',
                 key: ['rye', 'swiss', {name: 'onion', modifier: 'caramelized'}],
             },
+            // lamb (za'atar / harissa)
         ]
     },
-    // (hot) chicken
+    {
+        // chicken?
+        name: 'Fried Chicken Sandwich',
+        variants: [
+            {
+                name: 'Nashville Hot',
+                key: ['bread', 'fried chicken', 'pickle']
+            }
+        ]
+        // chicken (avocado)
+    },
     // texas toast
-    // pbj
     {
         name: 'Peanut Butter and Jelly',
         key: ['bread', 'peanut butter', 'jelly']
@@ -137,21 +152,44 @@ export const sandwiches: Recipe[] = [
         name: 'Chicken Parmigiana',
         key: ['bread', { name: 'chicken', modifier: 'breaded' }, 'tomato sauce', 'mozzarella']
     },
-    // blt(a)
-    // mushroom swiss
-    // mediterrean
-    // roast beef (beef on weck)
+    {
+        name: 'BLT',
+        key: ['bacon', 'lettuce', 'tomato'],
+        variants: [
+            {
+                name: 'BLTA',
+                key: ['avocado']
+            }
+        ]
+    },
+    {
+        name: 'Mediterrean',
+        optional: ['peppers', 'feta', 'cucumber', 'artichoke', 'tomato', 'hummus', 'artichoke hearts'],
+    },
+    {
+        name: 'Steak',
+        variants: [
+            {
+                name: 'Cheesesteak',
+                key: [{name: 'steak', modifier: 'thinly sliced'}, {name: 'cheese', modifier: 'melted'}], // provolone, american, cheese wiz
+                optional: [{name: 'onion', modifier: 'grilled'}, {name: 'green bell pepper', modifier: 'grilled'}, {name: 'mushroom', modifier: 'grilled'}, 'garlic aioli'],
+                // variation: chopped cheese
+            },
+        ]
+    },
+    {
+        name: 'Roast Beef',
+        // Beef on Weck
+        key: ['bun', 'roast beef', 'horseradish'],
+        optional: ['red onion']
+    },
     // chicken salad / tuna salad / egg salad
     // wreck - where to live?
     // bbq - pulled pork / brisket
     // lobster
     // po boy
     // choripan
-    // gyro
-    // shwarma
-    // doner kebab
     // cemita
-    // falafel
     {
         name: 'Reuben',
         key: ['rye', 'corned beef', 'swiss', 'sauerkraut', 'thousand island dressing' /* or russian */, 'horseradish'],
@@ -161,24 +199,28 @@ export const sandwiches: Recipe[] = [
         key: ['rye', 'spicy mustard', 'pickle']
     },
     // buffalo chicken
-    // chicken (fried)
     // corned beef
     // piadina
     // francesinha
     // bacon ranch (cheddar)
     // cajan chicken / jerk chicken
-    // cordon bleu
     // ham - jabon buerre
     // katsu
     {
         name: 'Italian Beef',
         key: ['french bread', 'roast beef', 'au jus', 'giardiniera'], // hot or sweet
         optional: ['cheese'],
+        // with fries
         // crusty
     },
-    // chicken avo (chipotle / verde)
-    // fried green tomato
-    // caprese (green goddess)
+    {
+        name: 'Chicken Avocado', // Southwest
+        key: ['bread', 'chicken', 'avocado'], // turkey
+        optional: ['chipotle sauce', 'verde sauce', 'gouda', 'cotija', 'tomato', 'red onion', {name: 'pepper', modifier: 'pickled'}]
+    },
+    {
+        name: 'Fried Green Tomato'
+    },
     {
         name: 'Caprese',
         key: ['tomato', 'mozzarella', 'basil'],
@@ -187,10 +229,7 @@ export const sandwiches: Recipe[] = [
     // sloppy joe
     // sandwich de lomo
     // arepa
-    // burrito (mission)
-
-
-    // separate wraps?
+    // mulita
 
     {
         name: 'Hot Dog',
@@ -225,14 +264,8 @@ export const sandwiches: Recipe[] = [
         // https://www.rhleavenworth.com/view-menu
     },
     // bruschetta
-]
-
-// empanada
-// pasty
-// phyllo
-
-const wraps = [
-    
+    // avocado toast
+    // tostada
 ]
 
 const toppings = [
@@ -269,7 +302,7 @@ const cheeses = [
 const sauces = [
     'mayo',
     'oil',
-    'ranch',
+    'ranch', // peppercorn
     'buffalo',
     'chipotle',
     'spicy mustard',
@@ -283,4 +316,7 @@ const sauces = [
     'honey mustard',
     'cream cheese',
     'salsa roja',
+    // sriacha
+    // onion terriyaki
+    // chipotle
 ]

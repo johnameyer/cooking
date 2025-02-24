@@ -1,10 +1,14 @@
+import { eggs } from "./egg";
 import { pizzas } from "./pizza";
 import { Recipe } from "./recipe";
 import { sandwiches } from "./sandwich";
+import { wraps } from "./wraps";
 
 export const all: Recipe[] = [
     { name: 'Sandwich', variants: sandwiches },
-    { name: 'Pizza', variants: pizzas }
+    { name: 'Pizza', variants: pizzas },
+    { name: 'Wrap', variants: wraps },
+    { name: 'Eggs', variants: eggs }
 ];
 
 const slug = (name: string) => name.toLowerCase().replaceAll(' ', '-');
