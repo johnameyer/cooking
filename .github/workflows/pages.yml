@@ -1,0 +1,53 @@
+name: pages
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: true
+
+      - name: Node Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          check-latest: true
+          cache: 'pnpm'
+
+      - name: Build
+        run: pnpm ng build --configuration production --base-href 'https://johnmeyer.dev/cooking/'
+
+      - name: Commit Files
+        run: |
+          git checkout --orphan gh-pages
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          find * -maxdepth 0 ! -name 'dist' -exec rm -r {} \;
+          mv dist/cooking/browser/* ./
+          mv index.html 404.html
+          rm -rf dist/
+          touch .nojekyll
+          git add -A
+          git commit -m "Update build"
+      
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          force: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Restore
+        uses: actions/checkout@v4
